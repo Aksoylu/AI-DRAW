@@ -9,7 +9,7 @@ def resimOku(path):
     img = img.flatten()
     return np.array(img)
 
-okunanResim = resimOku("Images/resim_1.png")
+okunanResim = resimOku("Images/resim_7.png")
 okunanResim = okunanResim.reshape(1,-1)
 
 yapayzeka = YapaySinirAgi()

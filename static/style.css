@@ -1,0 +1,70 @@
+.body{
+    user-select: none;
+}
+.header{
+    margin-left: 20px;
+    user-select: none;
+}
+
+.app-continer{
+    margin-top: 40px;
+}
+
+.sketch{
+    width: 280px;
+    height: 280px;
+    margin-left: 0px;
+    border-style: dashed;
+    position: absolute;
+}
+.resultArea{
+    width: 280px;
+    height: 280px;
+    margin-left: 450px;
+    margin-top: 0px;
+    border-style: dashed;
+    position: absolute;
+}
+
+.resultArea .result{
+    user-select: none;
+    margin-left: 110px;
+    margin-top: 0px;
+    font-size: 100;
+}
+
+.resultArea .resultHeader{
+    margin-left: 25px;
+    user-select: none;
+}
+
+.clearButton{
+    margin-top: 300px;
+    margin-left: 75px;
+    width: 100px;
+    position: absolute;
+    background-color: rgb(194, 115, 69);
+    border-radius: 30px;
+    border-style: none;
+    color:white
+}
+
+.analyzeButton{
+    margin-top: 300px;
+    margin-left: 190px;
+    width: 100px;
+    position: absolute;
+    background-color: rgb(45, 145, 163);
+    border-radius: 30px;
+    border-style: none;
+    color:white
+}
+
+.analyzeButton:active{
+    background-color: rgb(58, 207, 233);
+}
+
+
+.clearButton:active{
+    background-color: #d12525;
+}

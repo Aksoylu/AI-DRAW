@@ -1,0 +1,112 @@
+
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <h1 class="header"> Online Rakam Tanıyan Yapay Zekâ Uygulaması</h1>
+
+    <div class="app-continer">
+        <div class="sketch">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="resultArea">
+            <h1 class="resultHeader">Tahmin Sonucu</h1>
+            <p class="result">2</p>
+        </div>
+    </div>
+
+    <button onClick="clearCanvas()" class="clearButton">Temizle</button>
+    <button onClick="analyze()" class="analyzeButton">Analiz</button>
+
+</body>
+
+<script>
+
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+const resultArea = document.querySelector(".result");
+
+
+window.onload = () =>{
+    document.body.appendChild(canvas);
+    canvas.style.position = 'fixed';
+    resizeCanvas();
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+}
+resizeCanvas();
+window.addEventListener('resize',resizeCanvas);
+document.addEventListener('mousemove',draw);
+document.addEventListener('mousedown', setPosition);
+document.addEventListener('mouseenter', setPosition);
+
+var pos = {x:0, y:0};
+
+function setPosition(e)
+{
+    pos.x = e.clientX -20;
+    pos.y = e.clientY - 80;
+}
+
+function resizeCanvas()
+{
+    ctx.canvas.width = 280;
+    ctx.canvas.height = 280;
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0,0, ctx.width, ctx.height);
+}
+
+function draw(e)
+{
+    if (e.buttons !== 1) 
+        return;
+    
+        ctx.beginPath();
+
+        ctx.lineWidth = 25;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "#000000";
+
+        ctx.moveTo(pos.x, pos.y);
+        setPosition(e);
+        ctx.lineTo(pos.x,pos.y);
+        ctx.stroke();
+}
+
+
+function clearCanvas(){
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+    resizeCanvas();
+}
+
+function analyze()
+{
+    let image = ctx.getImageData(0,0, canvas.width, canvas.height);
+    let httpRequest = new XMLHttpRequest();
+
+    httpRequest.onload = (e) =>{
+        
+        document.querySelector(".result").innerHTML = e.target.responseText;
+    }
+
+    httpRequest.open('POST', "/yapayzeka_analiz");
+
+
+    canvas.toBlob(function(blob){
+
+        let data = new FormData();
+        data.append("image_file",blob);
+        httpRequest.send(data);
+
+    });
+
+
+
+
+}
+
+</script>

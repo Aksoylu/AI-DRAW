@@ -27,8 +27,8 @@ egitimVerisi.y = y
 
 
 yapayzeka = YapaySinirAgi()
-yapayzeka.egit(egitimVerisi,150)
-yapayzeka.kaydet("ytu_egitilmis_model_150")
+yapayzeka.egit(egitimVerisi,20)
+yapayzeka.kaydet("ytu_egitilmis_model_20")
 
 
 

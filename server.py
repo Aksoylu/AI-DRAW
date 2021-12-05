@@ -11,7 +11,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app)
 
 yapayzeka = YapaySinirAgi()
-yapayzeka.yukle("ytu_egitilmis_model_20")
+yapayzeka.yukle("ytu_egitilmis_model_150")
 
 def resimOptimizasyon(resim):
 
@@ -32,10 +32,10 @@ def analiz():
     _image.save(saved_image_path)
 
     if path.exists(saved_image_path):
-
         img = cv2.imread(saved_image_path, cv2.IMREAD_GRAYSCALE)
         yeniBoyut = (28,28)
-        img = cv2.resize(img,yeniBoyut)
+        img = cv2.resize(img,yeniBoyut , interpolation = cv2.INTER_AREA)
+        img = cv2.bitwise_not(img)
         img = resimOptimizasyon(img).reshape(1,-1)
         tahminSonuc = yapayzeka.tahminEt(img)
         tahminSonuc = np.argmax(tahminSonuc)

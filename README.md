@@ -28,3 +28,32 @@ command on your CLI
 `python server.py`
 command on your CLI
 
+
+## Thanks to all attendees & collaborators
+
+- @alihepi
+- @asliakaltunn
+- @ayhangider
+- @aysftmzhrgl
+- @bariscanbilgin
+- @baristokatlioglu
+- @Besteozulku
+- @bestoz
+- @ceyda1307
+- @cmelisa
+- @csenaesenboga
+- @demirelmrtcn
+- @dryzrc
+- @duxeph
+- @eminesozeri
+- @hediyeorhan
+- @HuseyinEfkanAlp
+- @Logenzo
+- @melikecbkc
+- @NihalDiler
+- @selvataas
+- @tugceyaziicii
+- @virosapienti
+- @yeyosef
+
+if i forgot your name but you was attended to my workshop, please mail me if <umit@aksoylu.space> so i can add your name

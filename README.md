@@ -17,7 +17,14 @@ You have to install followed libraries with your command line and pip:
 
 ## How to use ?
 
-- For training model, run "server.py"
-- For predicting images with trained model, run "predict.py"
-- There is already a pretrained model exist. So, you can directly start your web app by running "server.py"
+- For training model, run 
+`python train.py`
+command on your CLI
+- For predicting images with trained model, run
+`python predict.py`
+command on your CLI
+
+- There is already a pretrained model exist. So, you can directly start your web app by running
+`python server.py`
+command on your CLI
 

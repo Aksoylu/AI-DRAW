@@ -1,5 +1,7 @@
 from keras.models import Sequential, save_model, load_model
-from keras.layers import Dense
+from keras.layers import Dense, Conv2D, MaxPooling2D, Flatten
+from keras.layers import BatchNormalization
+
 from os import path
 
 
@@ -18,14 +20,24 @@ class YapaySinirAgi:
 
 
         self.model = Sequential()
-        self.model.add(Dense(784, input_dim=784, activation='relu'))    # Giriş katmanı
-        self.model.add(Dense(120, activation='relu'))
-        self.model.add(Dense(160, activation='relu'))
-        self.model.add(Dense(10, activation='softmax'))
-        self.model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['acc'])
+        self.model.add(Conv2D(filters=64, kernel_size = (3,3), activation="relu", input_shape=(28,28,1)))
+        self.model.add(Conv2D(filters=64, kernel_size = (3,3), activation="relu"))
+        self.model.add(MaxPooling2D(pool_size=(2,2)))
+        self.model.add(BatchNormalization())
+        self.model.add(Conv2D(filters=128, kernel_size = (3,3), activation="relu"))
+        self.model.add(Conv2D(filters=128, kernel_size = (3,3), activation="relu"))
+        self.model.add(MaxPooling2D(pool_size=(2,2)))
+        self.model.add(BatchNormalization())    
+        self.model.add(Conv2D(filters=256, kernel_size = (3,3), activation="relu"))
+        self.model.add(MaxPooling2D(pool_size=(2,2)))
+        self.model.add(Flatten())
+        self.model.add(BatchNormalization())
+        self.model.add(Dense(512,activation="relu"))
+        self.model.add(Dense(10,activation="softmax"))
+        self.model.compile(loss='categorical_crossentropy', optimizer="adam", metrics=['acc'])
     
     def egit(self, egitimVerisi, devir = 50):
-        self.model.fit(egitimVerisi.X, egitimVerisi.y, epochs=devir, batch_size=32)
+        self.model.fit(egitimVerisi.X, egitimVerisi.y, epochs=devir, batch_size=64)
         _,acc = self.model.evaluate(egitimVerisi.X,egitimVerisi.y)
         print("Eğitim tamamlandı, Doğruluk:", str(acc))
     

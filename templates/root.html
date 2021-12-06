@@ -5,9 +5,9 @@
 </head>
 
 <body>
-    <h1 class="header"> Online Rakam Tanıyan Yapay Zekâ Uygulaması</h1>
+    <h2 class="header">Web tabanlı rakam tanıyan derin öğrenme uygulaması</h2>
 
-    <div class="app-continer">
+    <div class="app-container">
         <div class="sketch">
             <canvas id="canvas"></canvas>
         </div>
@@ -21,21 +21,20 @@
     <button onClick="clearCanvas()" class="clearButton">Temizle</button>
     <button onClick="analyze()" class="analyzeButton">Analiz</button>
 
+    <div class="copyright">Copyright: <a href="https://umit.space">Ümit Aksoylu</a>, MIT Licence | 2021</div>
 </body>
 
 <script>
 
-const canvas = document.createElement('canvas');
+const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const resultArea = document.querySelector(".result");
 
 
 window.onload = () =>{
-    document.body.appendChild(canvas);
     canvas.style.position = 'fixed';
     resizeCanvas();
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    clearCanvas();
 
 }
 resizeCanvas();
@@ -48,7 +47,7 @@ var pos = {x:0, y:0};
 
 function setPosition(e)
 {
-    pos.x = e.clientX -20;
+    pos.x = e.clientX -50;
     pos.y = e.clientY - 80;
 }
 
@@ -67,7 +66,7 @@ function draw(e)
     
         ctx.beginPath();
 
-        ctx.lineWidth = 25;
+        ctx.lineWidth = 20;
         ctx.lineCap = "round";
         ctx.strokeStyle = "#000000";
 
@@ -79,8 +78,8 @@ function draw(e)
 
 
 function clearCanvas(){
-    ctx.clearRect(0,0, canvas.width, canvas.height);
-    resizeCanvas();
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function analyze()

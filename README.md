@@ -56,4 +56,4 @@ command on your CLI
 - @virosapienti
 - @yeyosef
 
-if i forgot your name but you was attended to my workshop, please mail me if <umit@aksoylu.space> so i can add your name
+if i forgot your name but you was attended to my workshop, please mail me <umit@aksoylu.space> so i can add your name

@@ -1,4 +1,4 @@
-# Web-based Shape Recognition Deep Learning Application
+# Web-based Shape Recognition Deep Learning Application (YTU NEURAL NETS)
 <img src="static/animation.gif" alt="Project show-off animation" width="60%"/>
 
 I did this project at the workshop he attended as a speaker. In fact, we did it together.

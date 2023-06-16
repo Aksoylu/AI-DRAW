@@ -1,7 +1,7 @@
 # Web-based Shape Recognition Deep Learning Application
 This project basically an interactive neural network project that able to recognize characters from your hand drawings.
-You can try working from demo here: [AI-DRAW WORKING DEMO](http://ai-draw.umitaksoylu.com)
 
+You can try working from demo here: [AI-DRAW WORKING DEMO](http://ai-draw.umitaksoylu.com)
 
 <img src="static/animation.gif" alt="Project show-off animation" width="60%"/>
 

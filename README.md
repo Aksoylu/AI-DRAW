@@ -1,9 +1,11 @@
-# Web-based Shape Recognition Deep Learning Application (YTU NEURAL NETS)
+# Web-based Shape Recognition Deep Learning Application
+This project basically an interactive neural network project that able to recognize characters from your hand drawings.
+You can try working from demo here: [AI-DRAW WORKING DEMO](http://ai-draw.umitaksoylu.com)
+
+
 <img src="static/animation.gif" alt="Project show-off animation" width="60%"/>
 
-I did this project at the workshop he attended as a speaker. In fact, we did it together.
-At the workshop that I attended with the invitation of Yıldız Technical University Mint Club and data science community, we held an event that lasted three hours with over 150+ people. 
-We have created this project together with the live coding event.
+
 
 ## Dependencies 
 You have to install followed libraries with your command line and pip:
@@ -27,33 +29,3 @@ command on your CLI
 - There is already a pretrained model exist. So, you can directly start your web app by running
 `python server.py`
 command on your CLI
-
-
-## Thanks to all attendees & collaborators
-
-- @alihepi
-- @asliakaltunn
-- @ayhangider
-- @aysftmzhrgl
-- @bariscanbilgin
-- @baristokatlioglu
-- @Besteozulku
-- @bestoz
-- @ceyda1307
-- @cmelisa
-- @csenaesenboga
-- @demirelmrtcn
-- @dryzrc
-- @duxeph
-- @eminesozeri
-- @hediyeorhan
-- @HuseyinEfkanAlp
-- @Logenzo
-- @melikecbkc
-- @NihalDiler
-- @selvataas
-- @tugceyaziicii
-- @virosapienti
-- @yeyosef
-
-if i forgot your name but you was attended to my workshop, please mail me <umit@aksoylu.space> so i can add your name
